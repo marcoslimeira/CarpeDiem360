@@ -3,30 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Visualizador 360º</title>
+
+  <!-- Estilo da página: remove margens e usa fundo preto -->
   <style>
     html, body {
       margin: 0;
       height: 100%;
-      background-color: #000;
+      background-color: #000; /* cor preta de fundo */
     }
+
+    /* Área onde a imagem 360 será exibida */
     #viewer {
       width: 100%;
       height: 100%;
     }
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.css">
+
+  <!-- Estilo do Photo Sphere Viewer (versão 4) -->
+  <link rel="stylesheet" href="https://unpkg.com/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css">
 </head>
+
 <body>
+  <!-- Contêiner onde a imagem 360 será exibida -->
   <div id="viewer"></div>
 
-  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.js"></script>
+  <!-- Biblioteca THREE.js (motor gráfico 3D) -->
+  <script src="https://unpkg.com/three@0.121.1/build/three.min.js"></script>
+
+  <!-- Photo Sphere Viewer versão 4 (compatível com script direto) -->
+  <script src="https://unpkg.com/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.js"></script>
+
+  <!-- Script que inicializa o visualizador 360º -->
   <script>
-    const viewer = new PhotoSphereViewer.Viewer({
-      container: document.querySelector('#viewer'),
+    const viewer = new PhotoSphereViewer({
+      // Caminho da imagem panorâmica (precisa estar no mesmo diretório que o HTML)
       panorama: 'IMG_20250330_173706_00_001.jpg',
+
+      // Elemento HTML onde a imagem será exibida
+      container: document.getElementById('viewer'),
+
+      // Barra de navegação com opções de zoom e fullscreen
       navbar: ['zoom', 'fullscreen'],
-      defaultYaw: '0deg',
+
+      // Ângulo inicial de visão (em graus)
+      defaultYaw: '0deg'
     });
   </script>
 </body>
