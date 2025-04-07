@@ -29,7 +29,8 @@
       container: document.getElementById('viewer'),
       panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos.
       navbar: ['zoom', 'fullscreen'],
-      cameraYaw: 0, // substitui defaultYaw, valor em radianos ou graus (se for string com 'deg')
+      defaultYaw: '0deg', // Correct way to set initial yaw
+      defaultPitch: '0deg', // Example of setting initial pitch, // substitui defaultYaw, valor em radianos ou graus (se for string com 'deg')
     });
   </script>
 </body>
