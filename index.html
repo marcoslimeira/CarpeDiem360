@@ -14,24 +14,20 @@
       height: 100%;
     }
   </style>
-  <!-- Carregando a folha de estilo do Photo Sphere Viewer versão 4 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.2.0/dist/photo-sphere-viewer.min.css">
 </head>
 <body>
   <div id="viewer"></div>
 
-  <!-- Carregando a biblioteca THREE.js versão 0.121.1 -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js"></script>
-  <!-- Carregando a biblioteca uEvent versão 2.0.0 -->
   <script src="https://cdn.jsdelivr.net/npm/uevent@2.0.0/browser.min.js"></script>
-  <!-- Carregando a biblioteca Photo Sphere Viewer versão 4 -->
   <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.2.0/dist/photo-sphere-viewer.min.js"></script>
 
   <script>
     // Inicializando o visualizador
-    const viewer = new PhotoSphereViewer({
+    const viewer = new PhotoSphereViewer.Viewer({
       container: document.getElementById('viewer'),
-      panorama: 'IMG_20250330_173706_00_001.jpg',
+      panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos e se o arquivo existe no repositório.
       navbar: ['zoom', 'fullscreen'],
       defaultYaw: '0deg',
     });
