@@ -27,10 +27,11 @@
     // Inicializando o visualizador
     const viewer = new PhotoSphereViewer.Viewer({
       container: document.getElementById('viewer'),
-      panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos e se o arquivo existe no repositório.
+      panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos.
       navbar: ['zoom', 'fullscreen'],
-      defaultYaw: '0deg',
+      cameraYaw: 0, // substitui defaultYaw, valor em radianos ou graus (se for string com 'deg')
     });
   </script>
 </body>
 </html>
+
