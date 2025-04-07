@@ -25,14 +25,23 @@
 
   <script>
     // Inicializando o visualizador
-    const viewer = new PhotoSphereViewer.Viewer({
-      container: document.getElementById('viewer'),
-      panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos.
-      navbar: ['zoom', 'fullscreen'],
-      yaw: 0,
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const baseUrl = 'https://github.com/marcoslimeira/CarpeDiem360/';
+
+    new Viewer({
+    container: 'viewer',
+    panorama: baseUrl + 'IMG_20250330_173706_00_001.jpg',
+    });
+    
+    //const viewer = new PhotoSphereViewer.Viewer({
+      //container: document.getElementById('viewer'),
+      //panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos.
+      //navbar: ['zoom', 'fullscreen'],
+      ///yaw: 0,
       //defaultYaw: '0deg', // Correct way to set initial yaw
       //defaultPitch: '0deg', // Example of setting initial pitch, // substitui defaultYaw, valor em radianos ou graus (se for string com 'deg')
-    });
+    //});
   </script>
 </body>
 </html>
