@@ -31,12 +31,14 @@
 
  <script>
   const viewer = new PhotoSphereViewer.Viewer({
-    container: document.getElementById('viewer'),
-    panorama: 'https://marcoslimeira.github.io/CarpeDiem360/IMG_20250330_173706_00_001.jpg', // nome e caminho estão certos
-    navbar: ['zoom', 'fullscreen'],
-    yaw: 0, // ângulo inicial de visão (em radianos ou graus como '0deg')
-    // pitch: 0, // use apenas se quiser definir a inclinação vertical
-  });
+  container: document.getElementById('viewer'),
+  panorama: 'https://marcoslimeira.github.io/CarpeDiem360/IMG_20250330_173706_00_001.jpg',
+  navbar: ['zoom', 'fullscreen'],
+  camera: {
+    longitude: 0, // ângulo inicial horizontal
+    latitude: 0   // ângulo inicial vertical
+  }
+});
 </script>
 
 </body>
