@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Visualizador 360º</title>
+
+  <!-- Estilo para ocupar toda a tela -->
   <style>
     html, body {
       margin: 0;
@@ -14,35 +16,37 @@
       height: 100%;
     }
   </style>
+
+  <!-- Estilos do Photo Sphere Viewer v4 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.2.0/dist/photo-sphere-viewer.min.css">
 </head>
 <body>
+  <!-- Container onde o visualizador será renderizado -->
   <div id="viewer"></div>
 
+  <!-- Bibliotecas necessárias (na ordem correta) -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uevent@2.0.0/browser.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4.2.0/dist/photo-sphere-viewer.min.js"></script>
 
   <script>
-    // Inicializando o visualizador
-    import { Viewer } from '@photo-sphere-viewer/core';
+    // Inicializando o visualizador (sintaxe correta para a v4.2.0)
+    const viewer = new PhotoSphereViewer.Viewer({
+      container: document.getElementById('viewer'),  // Div onde vai aparecer a imagem
+      panorama: 'IMG_20250330_173706_00_001.jpg',    // Imagem panorâmica (no mesmo nível que o HTML)
 
-    const baseUrl = 'https://github.com/marcoslimeira/CarpeDiem360/';
+      // Barras de controle (apenas zoom e fullscreen neste caso)
+      navbar: [
+        'zoom',
+        'fullscreen'
+      ],
 
-    new Viewer({
-    container: 'viewer',
-    panorama: baseUrl + 'IMG_20250330_173706_00_001.jpg',
+      // Posição inicial da câmera
+      defaultYaw: 0,      // em radianos ou em graus como string ('0deg')
+      defaultPitch: 0,    // opcional, altura da câmera no início
     });
-    
-    //const viewer = new PhotoSphereViewer.Viewer({
-      //container: document.getElementById('viewer'),
-      //panorama: 'IMG_20250330_173706_00_001.jpg', // Verifique se o caminho e o nome do arquivo estão corretos.
-      //navbar: ['zoom', 'fullscreen'],
-      ///yaw: 0,
-      //defaultYaw: '0deg', // Correct way to set initial yaw
-      //defaultPitch: '0deg', // Example of setting initial pitch, // substitui defaultYaw, valor em radianos ou graus (se for string com 'deg')
-    //});
   </script>
 </body>
 </html>
+
 
